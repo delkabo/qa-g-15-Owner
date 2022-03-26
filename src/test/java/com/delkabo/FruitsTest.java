@@ -1,11 +1,10 @@
 package com.delkabo;
 
 import com.delkabo.config.FruitsConfig;
-import org.aeonbits.owner.Config;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class FruitsTest {
 
@@ -39,7 +38,7 @@ public class FruitsTest {
                 .containsExactly("apple", "orange", "banana");
     }
 
-        @Test
+    @Test
     public void testListWithSeparator() {
         System.setProperty("list-with-separator", "apple;orange;banana");
 
