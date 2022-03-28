@@ -1,6 +1,7 @@
 package com.delkabo;
 
 import com.delkabo.config.AuthConfig;
+import jdk.jfr.Description;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -38,6 +39,7 @@ public class AuthTest {
     }
 
     @Test
+    @Description("Проверка чтения настроек из файла на копьютере или из resources")
     public void testRemoteFile2() throws Exception{
         AuthConfig config = ConfigFactory.create(AuthConfig.class, System.getProperties());
 

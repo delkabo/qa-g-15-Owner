@@ -14,7 +14,7 @@ import java.nio.file.Paths;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class SiteTest {
+public class WriteIntoFileTest {
 
     Path props = Paths.get("src/test/resources/auth.properties");
     Path newFilePath = Paths.get("src/test/resources/auth1.properties");
