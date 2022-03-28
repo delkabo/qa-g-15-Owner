@@ -16,10 +16,10 @@ public class AuthTest {
 
     Path props = Paths.get("C:/Users/delkabo/Desktop/auth2.properties");
 
-    @BeforeEach
-    public void clearFile() throws Exception {
-        Files.deleteIfExists(props);
-    }
+//    @BeforeEach
+//    public void clearFile() throws Exception {
+//        Files.deleteIfExists(props);
+//    }
 
     @Test
     public void testLocalFile() {
@@ -43,7 +43,7 @@ public class AuthTest {
 
 //        String content = "username=super-admin\npassword=super-pass";
 //        Files.write(props, content.getBytes());
-
+        System.out.println(config.username() + "\n" + config.passsword());
         assertThat(config.username()).isEqualTo("super-admin");
         assertThat(config.passsword()).isEqualTo("super-pass");
     }
