@@ -14,7 +14,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class AuthTest {
 
-    Path props = Paths.get("/tmp/auth.properties");
+    Path props = Paths.get("C:/Users/delkabo/Desktop/auth2.properties");
 
     @BeforeEach
     public void clearFile() throws Exception {
@@ -31,8 +31,19 @@ public class AuthTest {
     @Test
     public void testRemoteFile() throws Exception{
         String content = "username=super-admin\npassword=super-pass";
-        Files.write(props, content.getBytes(StandardCharsets.UTF_8));
+        Files.write(props, content.getBytes());
         AuthConfig config = ConfigFactory.create(AuthConfig.class, System.getProperties());
+        assertThat(config.username()).isEqualTo("super-admin");
+        assertThat(config.passsword()).isEqualTo("super-pass");
+    }
+
+    @Test
+    public void testRemoteFile2() throws Exception{
+        AuthConfig config = ConfigFactory.create(AuthConfig.class, System.getProperties());
+
+//        String content = "username=super-admin\npassword=super-pass";
+//        Files.write(props, content.getBytes());
+
         assertThat(config.username()).isEqualTo("super-admin");
         assertThat(config.passsword()).isEqualTo("super-pass");
     }
